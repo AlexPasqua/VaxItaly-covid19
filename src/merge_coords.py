@@ -1,13 +1,13 @@
 import csv
 
-with open("corrected-punti-somministrazione-latest.csv", 'r', encoding="utf8") as their:
-    with open("punti-somministrazione-nome-coordinate.csv", 'r', encoding="utf8") as ours:
+with open("../data/corrected-punti-somministrazione-latest.csv", 'r', encoding="utf8") as their:
+    with open("../data/punti-somministrazione-nome-coordinate.csv", 'r', encoding="utf8") as ours:
         their_reader = csv.reader(their)
         ours_reader = csv.reader(ours)
         their_rows = list(their_reader)
         our_rows = list(ours_reader)
 
-with open("punti-somministrazione-coordinate.csv", 'w', encoding="utf8") as out:
+with open("../data/punti-somministrazione-coordinate.csv", 'w', encoding="utf8") as out:
     header = their_rows[0] + our_rows[0][1:]
     out.write(','.join([w for w in header]))
     out.write('\n')
